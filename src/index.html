@@ -26,12 +26,27 @@
     </main>
 
     <script>
-        document.querySelectorAll("main div").forEach(el => {
-            const r = Math.random() * 30 + 100;
-            const g = Math.random() * 30 + 200;
-            const b = Math.random() * 30 + 220;
-            el.style.background = `rgb(${r}, ${g}, ${b})`;
-        })
+        function darkMode() {
+            if (!window.matchMedia) return false;
+            const query = window.matchMedia("(prefers-color-scheme: dark)");
+            return query.matches;
+        }
+
+        function randomise() {
+            document.querySelectorAll("main div").forEach(el => {
+                const dark = darkMode();
+
+                const r = Math.random() * 30 + (dark ? 50 : 100);
+                const g = Math.random() * 30 + (dark ? 100 : 200);
+                const b = Math.random() * 30 + (dark ? 110 : 220);
+                el.style.background = `rgb(${r}, ${g}, ${b})`;
+            });
+        }
+
+        randomise();
+
+        const query = window.matchMedia("(prefers-color-scheme: dark)");
+        query.addEventListener('change', randomise);
     </script>
 </body>
 
