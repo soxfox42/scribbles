@@ -33,6 +33,10 @@ h1 {
     font-family: "Montserrat";
 }
 
+a {
+    color: inherit;
+}
+
 textarea {
     width: 100%;
     font-family: inherit;
