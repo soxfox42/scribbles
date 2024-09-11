@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code&family=Montserrat:wght@700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --fg: #303030;
+    --bg: #ffffff;
+    --error-bg: #f08787;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --fg: #dddddd;
+        --bg: #1a1a1a;
+        --error-bg: #721313;
+    }
+}
+
+
+body {
+    font-family: "Fira Sans";
+    color: var(--fg);
+    background: var(--bg);
+
+    max-width: 80ch;
+    margin: auto;
+    padding: 0 1em;
+}
+
+h1 {
+    font-family: "Montserrat";
+}
+
+textarea {
+    width: 100%;
+    font-family: inherit;
+    resize: none;
+    border: 1px solid var(--fg);
+    background: inherit;
+    color: inherit;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+
+button {
+    background: var(--fg);
+    color: var(--bg);
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+progress {
+    width: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.outline {
+    border: 1px solid var(--fg);
+    border-radius: 0.5em;
+    padding: 0.5em;
+}
+
+.error {
+    background: var(--error-bg);
+    border-radius: 0.5em;
+    padding: 0.5em;
+}
+
+.gap {
+    margin-bottom: 1em;
+}
+
+.pointer {
+    cursor: pointer;
+}

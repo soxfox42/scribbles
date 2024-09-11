@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scribbles</title>
+
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <h1>Scribbles by soxfox</h1>
+
+    <main>
+        <a href="timer-stack/">
+            <div>Timer Stack</div>
+        </a>
+    </main>
+
+    <script>
+        document.querySelectorAll("main div").forEach(el => {
+            const r = Math.random() * 30 + 100;
+            const g = Math.random() * 30 + 200;
+            const b = Math.random() * 30 + 220;
+            el.style.background = `rgb(${r}, ${g}, ${b})`;
+        })
+    </script>
+</body>
+
+</html>

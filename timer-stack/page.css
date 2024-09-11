@@ -1,0 +1,19 @@
+#saved {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5em;
+}
+
+#saved > div {
+    position: relative;
+    min-height: 80px;
+}
+
+.delete {
+    background: var(--error-bg);
+    position: absolute;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    top: 0.5em;
+    right: 0.5em;
+}

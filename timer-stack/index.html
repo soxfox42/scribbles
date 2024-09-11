@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Timer Stack</title>
+
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="page.css">
+    <link rel="preload" as="audio" href="ring.mp3">
+</head>
+<body>
+    <h1>Timer Stack</h1>
+
+    <div class="error gap hide" id="error"></div>
+
+    <div id="running" class="outline hide">
+        <h2>Current Timer</h2>
+        <p id="current"></p>
+        <progress id="progress" value="0"></progress>
+        <h2>Remaining Timers</h2>
+        <p id="remaining"></p>
+        <button id="cancel">Cancel</button>
+    </div>
+
+    <p>Enter times, one line each (MM:SS and HH:MM:SS formats supported):</p>
+    <textarea id="stack" rows="10"></textarea>
+    <p>
+        <button id="run">Run Stack</button>
+        <button id="save">Save Stack</button>
+    </p>
+
+    <h2>Saved Stacks</h2>
+    <div id="saved"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
