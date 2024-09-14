@@ -136,7 +136,7 @@ function advance() {
         showQuote(quote);
     } else {
         for (const { el, correct } of fields) {
-            if (el.value === "") {
+            if (el.value === "" && hideSelectEl.value !== "100") {
                 return;
             }
             el.disabled = true;
