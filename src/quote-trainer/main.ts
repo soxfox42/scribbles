@@ -26,7 +26,7 @@ for (let i = 0; i <= 50; i += 10) {
 if (debugMode) {
     const option = document.createElement("option");
     option.value = "100";
-    option.textContent = "Hide all words";
+    option.textContent = "[DEBUG] Mark all words";
     hideSelectEl.appendChild(option);
 }
 
