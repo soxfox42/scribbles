@@ -1,0 +1,22 @@
+.word {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--fg);
+    padding: 0;
+    outline: none;
+}
+
+.word:focus {
+    border-bottom: 2px solid #4da0f3;
+    margin-bottom: -1px;
+}
+
+.word.correct {
+    color: #4caf50;
+    border-bottom: 1px solid #4caf50;
+}
+
+.word.incorrect {
+    color: #f44336;
+    border-bottom: 1px solid #f44336;
+}

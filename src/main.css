@@ -37,15 +37,13 @@ a {
     color: inherit;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 textarea {
     width: 100%;
-    font-family: inherit;
     resize: none;
-    border: 1px solid var(--fg);
-    background: inherit;
-    color: inherit;
-    padding: 0.5em;
-    border-radius: 0.5em;
 }
 
 button {
@@ -57,6 +55,16 @@ button {
     padding: 0.5em;
     border-radius: 0.5em;
     cursor: pointer;
+}
+
+input, textarea, select {
+    padding: 0.5em;
+    background: inherit;
+    color: inherit;
+    border: 1px solid var(--fg);
+    border-radius: 0.5em;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 progress {
@@ -80,9 +88,23 @@ progress {
 }
 
 .gap {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .pointer {
     cursor: pointer;
+}
+
+.flex {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.grow {
+    flex: 1;
+}
+
+.wide {
+    width: 100%;
 }

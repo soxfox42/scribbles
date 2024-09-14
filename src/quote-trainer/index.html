@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quote Trainer</title>
+
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="../main.css?945976d4">
+    <link rel="stylesheet" href="page.css">
+</head>
+
+<body>
+    <p>
+        <a href="..">Back to Scribbles</a>
+    </p>
+
+    <h1>Quote Trainer</h1>
+
+    <p>
+        <a href="edit.html">Edit Decks</a>
+    </p>
+
+    <div class="flex gap">
+        <select id="deck" class="grow">
+            <option disabled selected value="">Select a quote deck</option>
+        </select>
+
+        <select id="hide" class="grow"></select>
+
+        <button id="start">Start</button>
+    </div>
+    
+    <div id="quote" class="outline gap hide"></div>
+    <button id="next" class="wide hide">Next</button>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

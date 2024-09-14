@@ -1,7 +1,9 @@
 {
     "compilerOptions": {
         "strict": true,
-        "target": "es2017"
+        "target": "es2020",
+        "module": "preserve",
+        "moduleDetection": "force"
     },
     "include": ["**/*.ts"]
 }
