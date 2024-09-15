@@ -45,7 +45,7 @@ function words(quote: string): Text[] {
         if (match.index > lastIndex) {
             result.push({ text: quote.slice(lastIndex, match.index), raw: true });
         }
-        result.push({ text: match[0], raw: false });
+        result.push({ text: match[0].replace("’", "'"), raw: false });
         lastIndex = re.lastIndex;
     }
     if (lastIndex < quote.length) {
@@ -172,6 +172,7 @@ startButtonEl.addEventListener("click", () => {
     nextButtonEl.classList.remove("hide");
 
     quotes = decks[deckSelectEl.value].split("\n");
+    quotes = quotes.filter(quote => quote.trim() !== "");
     showingResult = true;
     shuffle(quotes);
     advance();
