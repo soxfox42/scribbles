@@ -16,7 +16,7 @@ for (const title of Object.keys(decks)) {
     deckSelectEl.appendChild(option);
 }
 
-for (let i = 0; i <= 50; i += 10) {
+for (let i = 0; i <= 80; i += 10) {
     const option = document.createElement("option");
     option.value = i.toString();
     option.textContent = i == 0 ? "Hide 1 word" : `Hide ${i}% of words`;
@@ -37,7 +37,7 @@ interface Text {
 
 function words(quote: string): Text[] {
     const result: Text[] = [];
-    const re = /\w[\w'-]*\w|\w/g;
+    const re = /\w[\w'’-]*\w|\w/g;
     let lastIndex = 0;
     while (true) {
         const match = re.exec(quote);
@@ -120,6 +120,11 @@ function showQuote(quote: string) {
 
             quoteEl.appendChild(el);
             fields.push({ el, correct: text });
+
+            if (i == 0) {
+                el.focus();
+            }
+
             i++;
         }
     }
@@ -135,12 +140,15 @@ function advance() {
         }
         showQuote(quote);
     } else {
-        for (const { el, correct } of fields) {
+        for (const { el } of fields) {
             if (el.value === "" && hideSelectEl.value !== "100") {
                 return;
             }
+        }
+
+        for (const { el, correct } of fields) {
             el.disabled = true;
-            if (el.value !== correct) {
+            if (el.value.toLowerCase() !== correct.toLowerCase()) {
                 el.classList.add("incorrect");
             } else {
                 el.classList.add("correct");
