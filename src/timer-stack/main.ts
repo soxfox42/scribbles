@@ -4,6 +4,7 @@ const runningEl = document.getElementById("running") as HTMLDivElement;
 const currentTimerEl = document.getElementById("current") as HTMLParagraphElement;
 const progressEl = document.getElementById("progress") as HTMLProgressElement;
 const remainingTimersEl = document.getElementById("remaining") as HTMLParagraphElement;
+const skipButtonEl = document.getElementById("skip") as HTMLButtonElement;
 const cancelButtonEl = document.getElementById("cancel") as HTMLButtonElement;
 
 const stackEl = document.getElementById("stack") as HTMLTextAreaElement;
@@ -51,6 +52,12 @@ function parseList(times: string): number[] | null {
         if (parsed === null) return null;
         result.push(parsed);
     }
+
+    if (result.length === 0) {
+        reportError("No timers set.");
+        return null;
+    }
+
     return result;
 }
 
@@ -75,6 +82,15 @@ let timerTickInterval: number | null = null;
 function ring() {
     const audio = new Audio("ring.mp3");
     audio.play();
+}
+
+function skipTimer() {
+    runningTimers.shift();
+    started = Date.now();
+    if (runningTimers.length === 0) {
+        cancelTimers();
+        return;
+    }
 }
 
 function cancelTimers() {
@@ -105,9 +121,8 @@ function timerTick() {
     remainingTimersEl.innerText = runningTimers.slice(1).map(displayTime).join("\n");
 }
 
-cancelButtonEl.addEventListener("click", () => {
-    cancelTimers();
-});
+skipButtonEl.addEventListener("click", skipTimer);
+cancelButtonEl.addEventListener("click", cancelTimers);
 
 runButtonEl.addEventListener("click", () => {
     clearErrors();
