@@ -109,3 +109,12 @@ progress {
 .wide {
     width: 100%;
 }
+
+.passthrough {
+    display: contents;
+}
+
+.center {
+    display: block;
+    margin: auto;
+}
