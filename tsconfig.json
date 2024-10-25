@@ -3,7 +3,9 @@
         "strict": true,
         "target": "es2020",
         "module": "preserve",
-        "moduleDetection": "force"
+        "moduleDetection": "force",
+        "types": [],
+        "lib": ["es2020", "dom", "dom.iterable"],
     },
     "include": ["**/*.ts"]
 }
