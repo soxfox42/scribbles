@@ -8,8 +8,8 @@
     <title>Scribbles</title>
 
     <link rel="icon" href="favicon.png">
-    <link rel="stylesheet" href="main.css?945976d4">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="main.css?35a10288">
+    <link rel="stylesheet" href="home.css?5fd8b02f">
 </head>
 
 <body>
@@ -42,17 +42,20 @@
             document.querySelectorAll("main div").forEach(el => {
                 const dark = darkMode();
 
-                const r = Math.random() * 30 + (dark ? 50 : 100);
-                const g = Math.random() * 30 + (dark ? 100 : 200);
-                const b = Math.random() * 30 + (dark ? 110 : 220);
-                el.style.background = `rgb(${r}, ${g}, ${b})`;
+                const h = Math.random() * 360;
+                const s = 100;
+                const l = dark ? 20 : 80;
+                el.style.background = `hsl(${h}deg ${s}% ${l}%)`;
+                console.log(`hsl(${h}deg ${s}% ${l}%)`);
             });
         }
 
         randomise();
 
-        const query = window.matchMedia("(prefers-color-scheme: dark)");
-        query.addEventListener('change', randomise);
+        if (window.matchMedia) {
+            const query = window.matchMedia("(prefers-color-scheme: dark)");
+            query.addEventListener('change', randomise);
+        }
     </script>
 </body>
 

@@ -10,6 +10,9 @@ main div {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /* default color */
+    background: #aaa;
 }
 
 main a {
