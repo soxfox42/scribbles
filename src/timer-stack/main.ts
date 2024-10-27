@@ -173,6 +173,7 @@ function updateSaved() {
 
         stackDeleteEl.addEventListener("click", event => {
             event.stopPropagation();
+            if (!confirm("Delete this stack?")) return;
             saved.splice(i, 1);
             updateSaved();
         });

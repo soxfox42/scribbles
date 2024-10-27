@@ -68,6 +68,7 @@ function createDeck(title: string = "", quotes: string = "") {
     (newEl.querySelector(".title") as HTMLInputElement).value = title;
     (newEl.querySelector(".quotes") as HTMLTextAreaElement).value = quotes;
     newEl.querySelector(".delete")!!.addEventListener("click", () => {
+        if (!confirm("Delete this deck?")) return;
         newEl.remove();
     });
     mainEl.appendChild(newEl);
