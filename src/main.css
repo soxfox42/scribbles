@@ -102,6 +102,18 @@ progress {
     flex-wrap: wrap;
 }
 
+.vertical {
+    flex-direction: column;
+}
+
+.stretch {
+    align-items: stretch;
+}
+
+.align-top {
+    align-items: flex-start;
+}
+
 .grow {
     flex: 1;
 }

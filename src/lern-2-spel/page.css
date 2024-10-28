@@ -1,0 +1,27 @@
+#alt, #word {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#alt {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+#word {
+    border: none;
+    border-top: 1px solid var(--fg);
+    border-radius: 0;
+}
+
+#word:focus {
+    outline: none;
+}
+
+#word.correct {
+    color: #4caf50;
+}
+
+#word.incorrect {
+    color: #f44336;
+}
