@@ -39,6 +39,7 @@ function submit() {
 
     if (state === "guess") {
         state = "show";
+        submitEl.textContent = "Next";
         if (guess === selectedWord) {
             wordEl.classList.add("correct");
         } else {
@@ -48,6 +49,7 @@ function submit() {
         wordEl.disabled = true;
     } else {
         state = "guess";
+        submitEl.textContent = "Check";
         wordEl.value = "";
         wordEl.classList.remove("correct", "incorrect");
         wordEl.disabled = false;

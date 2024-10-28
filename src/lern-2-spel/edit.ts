@@ -67,13 +67,14 @@ function createWord(title: string = "", quotes: string = "") {
     const newEl = document.createElement("div");
     newEl.classList.add("flex", "align-top", "gap");
     newEl.innerHTML = `
-        <div class="flex vertical stretch">
+        <div class="flex vertical stretch grow">
             <input type="text" class="word" placeholder="Word">
             <button class="delete" tabindex="-1">Delete</button>
         </div>
         <textarea
             class="grow alts" rows="5"
             placeholder="Misspellings, one line each" spellcheck="false"
+            style="width: 400px"
         ></textarea>
     `;
     (newEl.querySelector(".word") as HTMLInputElement).value = title;
