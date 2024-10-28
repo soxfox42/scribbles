@@ -12,7 +12,7 @@ let state: "guess" | "show" = "guess";
 let selectedWord: string = "";
 
 for (const key of Object.keys(rawWords)) {
-    words[key.toLowerCase()] = rawWords[key].split("\n").map(word => word.trim().toLowerCase()).filter(word => word !== "");
+    words[key] = rawWords[key].split("\n");
 }
 
 if (Object.keys(words).length != 0) {
@@ -40,11 +40,11 @@ function submit() {
     if (state === "guess") {
         state = "show";
         submitEl.textContent = "Next";
+        wordEl.value = selectedWord;
         if (guess === selectedWord) {
             wordEl.classList.add("correct");
         } else {
             wordEl.classList.add("incorrect");
-            wordEl.value = selectedWord;
         }
         wordEl.disabled = true;
     } else {

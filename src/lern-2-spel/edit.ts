@@ -24,9 +24,9 @@ function saveWords(): boolean {
 
     clearErrors();
     for (const el of mainEl.children) {
-        const word = (el.querySelector(".word") as HTMLInputElement).value;
+        const word = (el.querySelector(".word") as HTMLInputElement).value.trim().toLowerCase();
         const alts = (el.querySelector(".alts") as HTMLTextAreaElement).value;
-        const altsList = alts.split("\n").filter((line) => !line.match(/^\s*$/));
+        const altsList = alts.split("\n").map(alt => alt.trim().toLowerCase()).filter(alt => alt != "");
 
         if (word.match(/^\s*$/)) {
             reportError("Empty word.");
@@ -55,7 +55,7 @@ function saveWords(): boolean {
             allAlts.push(alt);
         }
 
-        words[word] = alts;
+        words[word] = altsList.join("\n");
     }
 
     localStorage.setItem("lern-2-spel-words", JSON.stringify(words));
